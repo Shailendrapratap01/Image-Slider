@@ -13,6 +13,7 @@ body{
     margin: 50px auto;
     position: relative;
     border-radius: .2rem;
+    overflow: hidden;
 }
 #img-container{
     width: 100%;
@@ -21,6 +22,8 @@ body{
 #img-container img{
     width: 100%;
     height: 100%;
+    position: absolute;
+    transition: 1s;
     object-fit: cover;
 }
 #dot-container{
@@ -37,7 +40,7 @@ body{
     border: none;
     border-radius: 50%;
 }
-#dot-container :nth-child(5){
+#dot-container :first-child{
     background-color: grey;
 }
 #icon1 i, #icon2 i{
@@ -46,6 +49,7 @@ body{
     font-weight: 100;
 }
 #icon1{
+    display: none;
     position: absolute;
     top: 45%;
     left: 2%;
@@ -56,8 +60,42 @@ body{
     right: 2%;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 768px) {
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+    #main-container{
+        width: 90%;
+        margin: 100px auto;
+    }
     #img-container{
-        height: 50rem;
+        height: 10rem;
+    }
+    #icon1 i, #icon2 i{
+        font-size: 20px;
+        font-weight: 100;
+    }
+    #dot-container{
+        gap: 8px;
+        left: 30%;
+        bottom: 5%;
+    }
+    #dot-container button{
+        width: 8px;
+        height: 8px;
+    }
+}
+@media only screen and (min-width: 768px){
+    #dot-container{
+        gap: 8px;
+        left: 35%;
+        bottom: 5%;
+    }
+}
+@media only screen and (min-width: 1024px){
+    #dot-container{
+        left: 40%;
+    }
+}
+@media only screen and (min-width: 2560px){
+    #dot-container{
+        left: 45%;
     }
 }
