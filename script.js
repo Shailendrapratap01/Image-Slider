@@ -16,30 +16,22 @@ const imgArray = [
   "images/img8.jpg",
 ];
 
-const createNewImage = () => {
-  for (let i = 0; i < imgArray.length; i++) {
-    const image = document.createElement("img");
-    image.src = imgArray[i];
-    image.classList.add("newImage");
-    imageContainer.appendChild(image);
-  }
-};
-createNewImage();
+for (let i = 0; i < imgArray.length; i++) {
+  const image = document.createElement("img");
+  image.src = imgArray[i];
+  image.classList.add("newImage");
+  imageContainer.appendChild(image);
+
+  const imageSliderBtn = document.createElement("button");
+  imageSliderBtn.classList.add("new-button");
+  imgSliderBtnContainer.appendChild(imageSliderBtn);
+}
 
 const images = document.querySelectorAll(".newImage");
 
 images.forEach((image, index) => {
   image.style.left = `${index * 100}%`;
 });
-
-const createSliderbtns = () => {
-  for (let i = 0; i < imgArray.length; i++) {
-    const imageSliderBtn = document.createElement("button");
-    imageSliderBtn.classList.add("new-button");
-    imgSliderBtnContainer.appendChild(imageSliderBtn);
-  }
-};
-createSliderbtns();
 
 const imgSliderBtns = document.querySelectorAll(".new-button");
 
