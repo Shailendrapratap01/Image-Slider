@@ -1,10 +1,32 @@
 const arrowNextBtn = document.getElementById("arrow-btn-right");
 const arrowPrevBtn = document.getElementById("arrow-btn-left");
-const images = document.querySelectorAll(".img");
 const imageContainer = document.getElementById("img-container");
 const imgSliderBtns = document.querySelectorAll(".btn");
 
 let count = 0;
+
+const imgArray = [
+  "images/img1.jpg",
+  "images/img2.jpg",
+  "images/img3.jpg",
+  "images/img4.jpg",
+  "images/img5.jpg",
+  "images/img6.jpg",
+  "images/img7.jpg",
+  "images/img8.jpg",
+];
+
+const createNewImage = () => {
+  for (let i = 0; i < imgArray.length; i++) {
+    const image = document.createElement("img");
+    image.src = imgArray[i];
+    image.classList.add("newImage");
+    imageContainer.appendChild(image);
+  }
+};
+createNewImage();
+
+const images = document.querySelectorAll(".newImage");
 
 images.forEach((image, index) => {
   image.style.left = `${index * 100}%`;
