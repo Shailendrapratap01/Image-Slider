@@ -26,7 +26,7 @@ body {
   transition: 1s;
   object-fit: cover;
 }
-#dot-container {
+#btn-container {
   display: flex;
   justify-content: center;
   gap: 15px;
@@ -34,14 +34,14 @@ body {
   left: 40%;
   bottom: 5%;
 }
-#dot-container button {
+.new-button {
   width: 12px;
   height: 12px;
   border: none;
   border-radius: 50%;
   cursor: pointer;
 }
-#dot-container :first-child {
+#btn-container :first-child {
   background-color: grey;
 }
 #arrow-btn-left i,
@@ -77,30 +77,30 @@ body {
     font-size: 20px;
     font-weight: 100;
   }
-  #dot-container {
+  #btn-container {
     gap: 8px;
     left: 30%;
     bottom: 5%;
   }
-  #dot-container button {
+  #btn-container button {
     width: 8px;
     height: 8px;
   }
 }
 @media only screen and (min-width: 768px) {
-  #dot-container {
+  #btn-container {
     gap: 8px;
     left: 35%;
     bottom: 5%;
   }
 }
 @media only screen and (min-width: 1024px) {
-  #dot-container {
+  #btn-container {
     left: 40%;
   }
 }
 @media only screen and (min-width: 2560px) {
-  #dot-container {
+  #btn-container {
     left: 45%;
   }
 }

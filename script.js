@@ -1,7 +1,7 @@
 const arrowNextBtn = document.getElementById("arrow-btn-right");
 const arrowPrevBtn = document.getElementById("arrow-btn-left");
 const imageContainer = document.getElementById("img-container");
-const imgSliderBtns = document.querySelectorAll(".btn");
+const imgSliderBtnContainer = document.getElementById("btn-container");
 
 let count = 0;
 
@@ -32,6 +32,26 @@ images.forEach((image, index) => {
   image.style.left = `${index * 100}%`;
 });
 
+const createSliderbtns = () => {
+  for (let i = 0; i < imgArray.length; i++) {
+    const imageSliderBtn = document.createElement("button");
+    imageSliderBtn.classList.add("new-button");
+    imgSliderBtnContainer.appendChild(imageSliderBtn);
+  }
+};
+createSliderbtns();
+
+const imgSliderBtns = document.querySelectorAll(".new-button");
+
+imgSliderBtns.forEach((imgSliderBtn, index) => {
+  imgSliderBtn.addEventListener("click", () => {
+    clearInterval(imgSlideInterval);
+    count = index;
+    moveSlide();
+    startImgSlideInterval();
+  });
+});
+
 arrowNextBtn.addEventListener("click", () => {
   clearInterval(imgSlideInterval);
   count++;
@@ -44,15 +64,6 @@ arrowPrevBtn.addEventListener("click", () => {
   count--;
   moveSlide();
   startImgSlideInterval();
-});
-
-imgSliderBtns.forEach((imgSliderBtn, index) => {
-  imgSliderBtn.addEventListener("click", () => {
-    clearInterval(imgSlideInterval);
-    count = index;
-    moveSlide();
-    startImgSlideInterval();
-  });
 });
 
 imageContainer.addEventListener("mouseover", () => {
@@ -69,13 +80,12 @@ const moveSlide = () => {
     if (count === 0) {
       arrowPrevBtn.style.display = "none";
       arrowNextBtn.style.display = "block";
-    } else if (count === 7) {
+    } else if (count === imgArray.length - 1) {
       arrowNextBtn.style.display = "none";
     } else {
       arrowNextBtn.style.display = "block";
       arrowPrevBtn.style.display = "block";
     }
-
     imgSliderBtns.forEach((imgSliderBtn) => {
       imgSliderBtn.style.backgroundColor = "white";
       imgSliderBtns[count].style.backgroundColor = "grey";
@@ -87,7 +97,7 @@ let imgSlideInterval;
 const startImgSlideInterval = () => {
   imgSlideInterval = setInterval(() => {
     count++;
-    if (count > 7) count = 0;
+    if (count > imgArray.length - 1) count = 0;
     moveSlide();
   }, 3000);
 };
