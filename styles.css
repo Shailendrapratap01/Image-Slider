@@ -39,26 +39,29 @@ body {
   height: 12px;
   border: none;
   border-radius: 50%;
+  cursor: pointer;
 }
 #dot-container :first-child {
   background-color: grey;
 }
-#icon1 i,
-#icon2 i {
+#arrow-btn-left i,
+#arrow-btn-right i {
   color: grey;
   font-size: 40px;
   font-weight: 100;
 }
-#icon1 {
+#arrow-btn-left {
   display: none;
   position: absolute;
   top: 45%;
   left: 2%;
+  cursor: pointer;
 }
-#icon2 {
+#arrow-btn-right {
   position: absolute;
   top: 45%;
   right: 2%;
+  cursor: pointer;
 }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
@@ -69,8 +72,8 @@ body {
   #img-container {
     height: 10rem;
   }
-  #icon1 i,
-  #icon2 i {
+  #arrow-btn-left i,
+  #arrow-btn-right i {
     font-size: 20px;
     font-weight: 100;
   }
