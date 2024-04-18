@@ -1,11 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Image Slider</title>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="main-container">
+      <div id="img-container">
+        <div id="sliding-img-container"></div>
+      </div>
+      <div id="arrow-btn-left"><i class="fa-solid fa-less-than"></i></div>
+      <div id="arrow-btn-right"><i class="fa-solid fa-greater-than"></i></div>
+      <div id="btn-container"></div>
+      <div id="confirmation-conatiner">
+        <p>Are You Sure ?</p>
+        <button id="confirm-delete">Confirm</button>
+      </div>
+      <div id="last-img-error">
+        <p>Can't Delete Last Image</p>
+      </div>
+      <div id="invalid-url-error">
+        <p>Invalid Url</p>
+      </div>
+    </div>
+    <div id="add-remove-btns">
+      <button id="add-slide-btn">
+        <p>Add Slide</p>
+      </button>
+      <button id="delete-slide-btn">
+        <p>Delete Slide</p>
+      </button>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/9dc74ed257.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
 </html>
